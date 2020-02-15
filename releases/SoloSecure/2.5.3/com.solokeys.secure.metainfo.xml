@@ -19,17 +19,25 @@
   <project_license>Apache 2.0 OR MIT</project_license>
   <developer_name>SoloKeys</developer_name>
   <releases>
-    <release urgency="medium" version="2.4.1" date="2019-07-30">
-      <checksum filename="firmware-secure-2.4.1.json" target="content"/>
-      <url type="source">https://github.com/solokeys/solo/tree/2.4.1</url>
+    <release urgency="medium" version="2.5.3" date="2019-09-18">
+      <checksum filename="firmware-secure-2.5.3.json" target="content"/>
+      <url type="source">https://github.com/solokeys/solo/tree/2.5.3</url>
       <description>
         <p>
-          This stable release fixes the following issues:
+          Fix two issues with CTAP2/FIDO2:
         </p>
         <ul>
-          <li>Fix incorrect signature calculated when hmac-secret extension is used</li>
-          <li>Improve length check in USB request to increase fault resistance</li>
+		  <li>RpID in request is checked to match credential for non-RK.</li>
+          <li>Up=false option in get_assertion allows assertion to pass without UP.</li>
         </ul>
+		<p>
+          #308<br>
+		  #306<br>
+		  #305<br>
+		</p>
+		<p>
+          Thanks to @KenTaylorPhoenix for reporting. Also thanks to @merlokk for another NFC improvement #301.
+        </p>
       </description>
     </release>
   </releases>

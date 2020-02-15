@@ -19,16 +19,19 @@
   <project_license>Apache 2.0 OR MIT</project_license>
   <developer_name>SoloKeys</developer_name>
   <releases>
-    <release urgency="medium" version="2.4.1" date="2019-07-30">
-      <checksum filename="firmware-secure-2.4.1.json" target="content"/>
-      <url type="source">https://github.com/solokeys/solo/tree/2.4.1</url>
+    <release urgency="medium" version="3.0.1" date="2019-11-02">
+      <checksum filename="firmware-3.0.1.json" target="content"/>
+      <url type="source">https://github.com/solokeys/solo/tree/3.0.1</url>
       <description>
         <p>
-          This stable release fixes the following issues:
+          Minor update.
         </p>
         <ul>
-          <li>Fix incorrect signature calculated when hmac-secret extension is used</li>
-          <li>Improve length check in USB request to increase fault resistance</li>
+          <li>Refactor to allow building Solo as lib.</li>
+		  <li>Secure version of Solo will have different certs for Solo, Solo Tap, and Somu now.</li>
+		    <ul>
+		      <li>Additionally, the first byte of the AAGUID for each model is different.</li>
+		    </ul>
         </ul>
       </description>
     </release>

@@ -19,16 +19,15 @@
   <project_license>Apache 2.0 OR MIT</project_license>
   <developer_name>SoloKeys</developer_name>
   <releases>
-    <release urgency="medium" version="2.4.1" date="2019-07-30">
-      <checksum filename="firmware-secure-2.4.1.json" target="content"/>
-      <url type="source">https://github.com/solokeys/solo/tree/2.4.1</url>
+    <release urgency="medium" version="2.5.1" date="2019-08-30">
+      <checksum filename="firmware-secure-2.5.1.json" target="content"/>
+      <url type="source">https://github.com/solokeys/solo/tree/2.5.1</url>
       <description>
         <p>
-          This stable release fixes the following issues:
+          Minor patch for 2.5.0. Be sure to read 2.5.0 notes.
         </p>
         <ul>
-          <li>Fix incorrect signature calculated when hmac-secret extension is used</li>
-          <li>Improve length check in USB request to increase fault resistance</li>
+          <li>#292</li>
         </ul>
       </description>
     </release>
