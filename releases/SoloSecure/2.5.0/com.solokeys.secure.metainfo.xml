@@ -19,17 +19,19 @@
   <project_license>Apache 2.0 OR MIT</project_license>
   <developer_name>SoloKeys</developer_name>
   <releases>
-    <release urgency="medium" version="2.4.1" date="2019-07-30">
-      <checksum filename="firmware-secure-2.4.1.json" target="content"/>
-      <url type="source">https://github.com/solokeys/solo/tree/2.4.1</url>
+    <release urgency="medium" version="2.5.0" date="2019-08-24">
+      <checksum filename="firmware-secure-2.5.0.json" target="content"/>
+      <url type="source">https://github.com/solokeys/solo/tree/2.5.0</url>
       <description>
         <p>
-          This stable release fixes the following issues:
+   		  This release adds improvements on NFC so it is compatible with Windows Hello NFC and more NFC readers (in addition to USB).<br>
+		  <br>
+		  Thanks a lot to Oleg @merlokk for developing a number of improvements for NFC. The most important change was adding "apdu-level" chaining in addition to extended APDU support. Tested with ACR and HID NFC readers.<br>
+		  <br>
+		  Thanks a lot to Alex @aseigler for finding issues with Windows Hello & Solo and testing the various fixes we came up with along the way. Also for testing multiple readers and devices.<br>
+		  <br>
+		  Other improvements (#289,#290) around handling of button and timeouts.
         </p>
-        <ul>
-          <li>Fix incorrect signature calculated when hmac-secret extension is used</li>
-          <li>Improve length check in USB request to increase fault resistance</li>
-        </ul>
       </description>
     </release>
   </releases>

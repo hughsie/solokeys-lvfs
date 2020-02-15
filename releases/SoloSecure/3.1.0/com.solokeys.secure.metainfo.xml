@@ -19,17 +19,16 @@
   <project_license>Apache 2.0 OR MIT</project_license>
   <developer_name>SoloKeys</developer_name>
   <releases>
-    <release urgency="medium" version="2.4.1" date="2019-07-30">
-      <checksum filename="firmware-secure-2.4.1.json" target="content"/>
-      <url type="source">https://github.com/solokeys/solo/tree/2.4.1</url>
+    <release urgency="medium" version="3.1.0" date="2020-02-07">
+      <checksum filename="firmware-3.1.0.json" target="content"/>
+      <url type="source">https://github.com/solokeys/solo/tree/3.1.0</url>
       <description>
         <p>
-          This stable release fixes the following issues:
+          This fixes an issue in the Solo bootloader that allows an old signed-firmware version to be programmed on secured solo builds.
         </p>
-        <ul>
-          <li>Fix incorrect signature calculated when hmac-secret extension is used</li>
-          <li>Improve length check in USB request to increase fault resistance</li>
-        </ul>
+        <p>
+          Thanks to @fcremo and @ikkisoft of Doyensec for the security audit and catching this!
+        </p>
       </description>
     </release>
   </releases>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2019 Richard Hughes <richard@hughsie.com> -->
+<component type="firmware">
+  <id>com.solokeys.secure.firmware</id>
+  <name>Secure</name>
+  <summary>Firmware for the Solo Secure open source FIDO2 security key</summary>
+  <description>
+    <p>
+      Updating the firmware on your Solo device improves performance and adds
+      new features.
+    </p>
+  </description>
+  <provides>
+    <!-- USB\VID_0483&PID_A2CA -->
+    <firmware type="flashed">75509ff8-6d27-5dd4-b6c0-c2fccd49e236</firmware>
+  </provides>
+  <url type="homepage">https://solokeys.com/</url>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>Apache 2.0 OR MIT</project_license>
+  <developer_name>SoloKeys</developer_name>
+  <releases>
+    <release urgency="medium" version="3.0.0" date="2019-10-29">
+      <checksum filename="firmware-3.0.0.json" target="content"/>
+      <url type="source">https://github.com/solokeys/solo/tree/3.0.0</url>
+      <description>
+        <p>
+          A lot of improvements with this release. 
+        </p>
+        <ul>
+          <li>Secure and Hacker firmware are no more. There is only one firmware now, and lock/unlock settings are configured/set separately. (#331)</li>
+            <ul>    
+              <li>Old devices can still update normally, but you may need to update your <code>solo-python</code>.</li>
+            </ul>
+          <li>Bootloader now checks version on updates and prevents downgrades. This is a security improvement. It is not enabled on devices with a "hacker" bootloader. Thanks a lot to @szszszsz of @Nitrokey for implementing this! (#238).</li>
+		  <li>The CTAP2 PIN is now stored only in hash form, instead of in plaintext. Thank you to @szszszsz / @Nitrokey for implementing this! (#240).</li>
+		  <li>Our docker build was optimized and is more friendly for people to build the firmware for their own uses, in addition to use using it for release builds. Thanks a lot to @ccinelli for adding this! (#329, #330).</li>
+		  <li>Add support to U2F to be able to handle FIDO2 key handles. This was causing some problems when the various FIDO stacks out in the wild are mixed. (#323).</li>
+		  <li>Code cosmetics and documentation improved. Thanks @jolo1581! (#318, #324).</li>
+        </ul>
+        <p>
+          To update:
+         <pre>
+		 <code>wget https://github.com/solokeys/solo/releases/download/3.0.0/firmware-3.0.0.json solo program bootloader firmware-3.0.0.json</code>
+		 </pre>
+        </p>
+		<p>
+		  Make sure you upgrade <code>solo</code> to latest version (<code>pip install solo-python --upgrade</code>).
+		</p>
+      </description>
+    </release>
+  </releases>
+  <screenshots>
+    <screenshot type="default">
+      <image type="source">https://raw.githubusercontent.com/hughsie/solokeys-lvfs/master/screenshots/secure.png</image>
+      <caption>Unplug the device, press and hold the button whilst re-inserting, and release when the light is flashing yellow.</caption>
+    </screenshot>
+  </screenshots>
+  <categories>
+    <category>X-Device</category>
+  </categories>
+  <keywords>
+    <keyword>u2f</keyword>
+    <keyword>fido</keyword>
+  </keywords>
+  <requires>
+    <id compare="ge" version="1.2.11">org.freedesktop.fwupd</id>
+  </requires>
+  <custom>
+    <value key="LVFS::UpdateProtocol">com.solokeys</value>
+    <value key="LVFS::VersionFormat">triplet</value>
+  </custom>
+</component>
